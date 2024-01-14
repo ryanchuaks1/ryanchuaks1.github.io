@@ -12,7 +12,7 @@ jobs:
         to: ${{ secrets.TELEGRAM_TO }}
         token: ${{ secrets.TELEGRAM_TOKEN }}
         message: |  #https://help.github.com/en/actions/reference/contexts-and-expression-syntax-for-github-actions#github-context
-          ${{ github.action }} commit in
+          ${{ github.event_name }} commit in
           ${{ github.repository }}
           by "${{ github.actor }}"
-          at ${{ github.ref }}
+          at ${{ github.ref_name }}
