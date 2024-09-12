@@ -79,13 +79,13 @@ export default function Home() {
         <div className="min-h-screen bg-no-repeat bg-cover">
             <Particles className="min-h-screen" options={options} />
             <div className="rellax h-64">
-                I'm that default chill speed of "-2"
+                Default speed
             </div>
             <div className="rellax h-64" data-rellax-speed="7">
-                I'm super fast!!
+                Super Fast!
             </div>
             <div className="rellax h-64" data-rellax-speed="-4">
-                I'm extra slow and smooth
+                Slowww
             </div>
         </div>
     );
