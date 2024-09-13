@@ -1,4 +1,5 @@
 import type { Config } from 'tailwindcss'
+const animate = require('@jcamp/tailwindcss-plugin-animate')
 
 const config: Config = {
   content: [
@@ -12,7 +13,15 @@ const config: Config = {
         'night': "url('/img/nightsky.jpg')",
       }
     },
+    fontFamily: {
+      pacifico: ['Pacifico', 'cursive'],
+      poppins: ['Poppins', 'sans-serif'],
+    },
   },
-  plugins: [],
+  plugins: [
+    animate({
+      
+    }),
+  ],
 }
 export default config

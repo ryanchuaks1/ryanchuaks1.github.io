@@ -4,13 +4,14 @@ import React, { useEffect, useState } from "react";
 import Rellax from "rellax";
 import Particles, { initParticlesEngine } from "@tsparticles/react";
 import { loadSlim } from "@tsparticles/slim"; // if you are going to use `loadSlim`, install the "@tsparticles/slim" package too.
+import Header from "./components/header";
 
 export default function Home() {
     const [init, setInit] = useState(false);
 
     useEffect(() => {
         const rellax = new Rellax(".rellax", {
-            speed: -2,
+            speed: -4,
             center: false,
             round: true,
             vertical: true,
@@ -30,7 +31,7 @@ export default function Home() {
     const options = {
         background: {
             color: {
-                value: "#000000", // Black background
+                value: "#0C0726", // Background color
             },
         },
         fpsLimit: 60, // Lower FPS for smoother animation
@@ -77,10 +78,13 @@ export default function Home() {
 
     return (
         <div className="min-h-screen bg-no-repeat bg-cover">
-            <Particles className="min-h-screen" options={options} />
-            <div className="rellax h-64">
-                Default speed
+            <Particles options={options} />
+
+            {/* Heading */}
+            <div className="my-24 rellax">
+                <Header />
             </div>
+
             <div className="rellax h-64" data-rellax-speed="7">
                 Super Fast!
             </div>
