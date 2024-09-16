@@ -4,7 +4,7 @@ import React, { useEffect, useState } from "react";
 import Rellax from "rellax";
 import Particles, { initParticlesEngine } from "@tsparticles/react";
 import { loadSlim } from "@tsparticles/slim"; // if you are going to use `loadSlim`, install the "@tsparticles/slim" package too.
-import Header from "./components/header";
+import Header from "../components/header";
 
 export default function Home() {
     const [init, setInit] = useState(false);
@@ -77,21 +77,21 @@ export default function Home() {
     };
 
     return (
-        <div className="snap-y overflow-y-scroll h-screen" >
+        <div className="snap" >
             <Particles options={options} />
 
             {/* Heading */}
-            <div className="rellax py-24 snap-start">
+            <div className="rellax py-24 ">
                 <Header />
             </div>
 
-            <div className="rellax p-96 border-red-400 border-2 snap-center" data-rellax-speed="7">
+            <div className="rellax p-64 border-red-400 border-2 " data-rellax-speed="7">
 
             </div>
-            <div className="rellax p-96 border-red-400 border-2 snap-center" data-rellax-speed="3">
+            <div className="rellax p-64 border-red-400 border-2 " data-rellax-speed="3">
 
             </div>
-            <div className="rellax p-96 border-red-400 border-2 snap-center" data-rellax-speed="-2">
+            <div className="rellax p-64 border-red-400 border-2 " data-rellax-speed="-2">
 
             </div>
         </div >
