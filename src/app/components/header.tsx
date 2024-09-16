@@ -50,7 +50,7 @@ export default function Header() {
             < div className=" text-5xl font-pacifico text-center" >
                 Hi, I&apos;m <Link href="https://www.linkedin.com/in/ryanchuaks/" className="text-blue-500">Ryan Chua</Link>
             </div >
-            <div className="text-4xl mt-8 font-poppins text-center">
+            <div className="text-4xl mt-6 font-poppins text-center">
                 <div className="word w-fit mx-auto">{wordList[wordIndex]}</div>
             </div>
         </div >

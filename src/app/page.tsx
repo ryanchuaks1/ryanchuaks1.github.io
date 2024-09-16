@@ -11,7 +11,7 @@ export default function Home() {
 
     useEffect(() => {
         const rellax = new Rellax(".rellax", {
-            speed: -4,
+            speed: 0,
             center: false,
             round: true,
             vertical: true,
@@ -77,19 +77,22 @@ export default function Home() {
     };
 
     return (
-        <div className="min-h-screen bg-no-repeat bg-cover">
+        <div className="snap-y snap-mandatory overflow-y-scroll h-screen">
             <Particles options={options} />
 
             {/* Heading */}
-            <div className="my-24 rellax">
+            <div className="py-24 rellax snap-start">
                 <Header />
             </div>
 
-            <div className="rellax h-64" data-rellax-speed="7">
-                Super Fast!
+            <div className="rellax h-screen border-red-400 border-2 snap-center" data-rellax-speed="0">
+                Container 1
             </div>
-            <div className="rellax h-64" data-rellax-speed="-4">
-                Slowww
+            <div className="rellax h-screen border-red-400 border-2 snap-center" data-rellax-speed="0">
+                Container 2
+            </div>
+            <div className="rellax h-screen border-red-400 border-2 snap-center" data-rellax-speed="0">
+                Container 3
             </div>
         </div>
     );
