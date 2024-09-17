@@ -5,13 +5,14 @@ import Rellax from "rellax";
 import Particles, { initParticlesEngine } from "@tsparticles/react";
 import { loadSlim } from "@tsparticles/slim"; // if you are going to use `loadSlim`, install the "@tsparticles/slim" package too.
 import Header from "./components/header";
+import About from "./test/about";
 
 export default function Home() {
     const [init, setInit] = useState(false);
 
     useEffect(() => {
         const rellax = new Rellax(".rellax", {
-            speed: -2,
+            speed: 0,
             center: false,
             round: true,
             vertical: true,
@@ -29,11 +30,6 @@ export default function Home() {
 
     // Background star options
     const options = {
-        background: {
-            color: {
-                value: "#0C0726", // Background color
-            },
-        },
         fpsLimit: 60, // Lower FPS for smoother animation
         particles: {
             color: {
@@ -76,24 +72,36 @@ export default function Home() {
         detectRetina: true,
     };
 
+    // Console.log position of the page
+    useEffect(() => {
+        const handleScroll = () => {
+            console.log(window.scrollY);
+        };
+        window.addEventListener("scroll", handleScroll);
+        return () => {
+            window.removeEventListener("scroll", handleScroll);
+        };
+    }, []);
+
     return (
-        <div className="snap-y overflow-y-scroll h-screen" >
+        <div className="snap-y min-h-screen bg-gradient-to-b from-indigo-950 via-blue-800 to-pink-400" >
             <Particles options={options} />
 
             {/* Heading */}
-            <div className="rellax py-24 snap-start">
+            <div className="rellax snap-start">
                 <Header />
+            </div>  
+            <div className="rellax border-red-400 border-2 snap-center">
+                <About />
             </div>
 
-            <div className="rellax p-96 border-red-400 border-2 snap-center" data-rellax-speed="7">
+            <div className="rellax p-96 border-red-400 border-2 snap-center" data-rellax-speed="0">
 
             </div>
-            <div className="rellax p-96 border-red-400 border-2 snap-center" data-rellax-speed="3">
+            <div className="rellax p-96 border-red-400 border-2 snap-center" data-rellax-speed="0">
 
             </div>
-            <div className="rellax p-96 border-red-400 border-2 snap-center" data-rellax-speed="-2">
-
-            </div>
+            
         </div >
     );
 }

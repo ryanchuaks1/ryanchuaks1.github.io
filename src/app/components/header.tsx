@@ -31,6 +31,7 @@ export default function Header() {
                 // Apply fade-in class initially
                 animatedWord.classList.add("animate-fade-in-left");
                 animatedWord.classList.remove("animate-fade-out-right");
+                animatedWord.classList.remove("animate-delay-3");
 
                 // Remove fade-in class after 2 seconds and add fade-out class
                 setTimeout(() => {
@@ -46,12 +47,12 @@ export default function Header() {
 
 
     return (
-        <div>
-            < div className=" text-5xl font-pacifico text-center" >
+        <div className="h-screen flex flex-col justify-center">
+            <div className=" text-5xl font-pacifico text-center">
                 Hi, I&apos;m <Link href="https://www.linkedin.com/in/ryanchuaks/" className="text-blue-500">Ryan Chua</Link>
-            </div >
+            </div>
             <div className="text-4xl mt-6 font-poppins text-center">
-                <div className="word w-fit mx-auto">{wordList[wordIndex]}</div>
+                <div className="word w-fit mx-auto animate-delay-3">{wordList[wordIndex]}</div>
             </div>
         </div >
     );
