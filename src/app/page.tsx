@@ -5,7 +5,7 @@ import Rellax from "rellax";
 import Particles, { initParticlesEngine } from "@tsparticles/react";
 import { loadSlim } from "@tsparticles/slim"; // if you are going to use `loadSlim`, install the "@tsparticles/slim" package too.
 import Header from "./components/header";
-import About from "./test/about";
+import About from "./components/about";
 
 export default function Home() {
     const [init, setInit] = useState(false);
@@ -72,33 +72,21 @@ export default function Home() {
         detectRetina: true,
     };
 
-    // Console.log position of the page
-    useEffect(() => {
-        const handleScroll = () => {
-            console.log(window.scrollY);
-        };
-        window.addEventListener("scroll", handleScroll);
-        return () => {
-            window.removeEventListener("scroll", handleScroll);
-        };
-    }, []);
-
     return (
-        <div className="snap-y min-h-screen bg-gradient-to-b from-indigo-950 via-blue-800 to-pink-400" >
+        <div className="min-h-screen bg-gradient-to-b from-indigo-950 via-blue-800 to-pink-400" >
             <Particles options={options} />
-
-            {/* Heading */}
-            <div className="rellax snap-start">
+            
+            <div className="rellax" data-rellax-speed="0">
                 <Header />
             </div>  
-            <div className="rellax border-red-400 border-2 snap-center">
+            <div className="rellax border-red-400 border-2" data-rellax-speed="0">
                 <About />
             </div>
 
-            <div className="rellax p-96 border-red-400 border-2 snap-center" data-rellax-speed="0">
+            <div className="rellax p-96 border-red-400 border-2" data-rellax-speed="0">
 
             </div>
-            <div className="rellax p-96 border-red-400 border-2 snap-center" data-rellax-speed="0">
+            <div className="rellax p-96 border-red-400 border-2" data-rellax-speed="0">
 
             </div>
             

@@ -17,7 +17,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <script src="anime.min.js"></script>
+        {/* <script src="anime.min.js"></script> */}
         {/* <script>history.scrollRestoration = "manual"</script> */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
